@@ -3,16 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E04A14025C6E64F00CEEFD0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A13F25C6E64F00CEEFD0 /* DatabaseManager.swift */; };
 		5E1CA43725C69482002C37FF /* SwiftUITask02App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CA43625C69482002C37FF /* SwiftUITask02App.swift */; };
 		5E1CA43925C69482002C37FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CA43825C69482002C37FF /* ContentView.swift */; };
 		5E1CA43B25C69485002C37FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1CA43A25C69485002C37FF /* Assets.xcassets */; };
 		5E1CA43E25C69485002C37FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1CA43D25C69485002C37FF /* Preview Assets.xcassets */; };
 		5E1CA44925C69485002C37FF /* SwiftUITask02Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CA44825C69485002C37FF /* SwiftUITask02Tests.swift */; };
 		5E1CA45425C69485002C37FF /* SwiftUITask02UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CA45325C69485002C37FF /* SwiftUITask02UITests.swift */; };
+		5E1CA46525C69528002C37FF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CA46425C69528002C37FF /* Item.swift */; };
+		5E1CA46A25C69595002C37FF /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CA46925C69595002C37FF /* ItemView.swift */; };
+		5E1CA46F25C6974A002C37FF /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CA46E25C6974A002C37FF /* EditView.swift */; };
+		5E1CA47825C69796002C37FF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E1CA47A25C69796002C37FF /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E04A13F25C6E64F00CEEFD0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		5E1CA43325C69482002C37FF /* SwiftUITask02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITask02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1CA43625C69482002C37FF /* SwiftUITask02App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITask02App.swift; sourceTree = "<group>"; };
 		5E1CA43825C69482002C37FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,11 @@
 		5E1CA44F25C69485002C37FF /* SwiftUITask02UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUITask02UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1CA45325C69485002C37FF /* SwiftUITask02UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITask02UITests.swift; sourceTree = "<group>"; };
 		5E1CA45525C69485002C37FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E1CA46425C69528002C37FF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5E1CA46925C69595002C37FF /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		5E1CA46E25C6974A002C37FF /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		5E1CA47925C69796002C37FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E1CA47E25C697A9002C37FF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +90,7 @@
 				5E1CA44725C69485002C37FF /* SwiftUITask02Tests */,
 				5E1CA45225C69485002C37FF /* SwiftUITask02UITests */,
 				5E1CA43425C69482002C37FF /* Products */,
+				C0979BD823085FE424FA7924 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +112,11 @@
 				5E1CA43A25C69485002C37FF /* Assets.xcassets */,
 				5E1CA43F25C69485002C37FF /* Info.plist */,
 				5E1CA43C25C69485002C37FF /* Preview Content */,
+				5E1CA46425C69528002C37FF /* Item.swift */,
+				5E1CA46925C69595002C37FF /* ItemView.swift */,
+				5E1CA46E25C6974A002C37FF /* EditView.swift */,
+				5E1CA47A25C69796002C37FF /* Localizable.strings */,
+				5E04A13F25C6E64F00CEEFD0 /* DatabaseManager.swift */,
 			);
 			path = SwiftUITask02;
 			sourceTree = "<group>";
@@ -128,6 +145,13 @@
 				5E1CA45525C69485002C37FF /* Info.plist */,
 			);
 			path = SwiftUITask02UITests;
+			sourceTree = "<group>";
+		};
+		C0979BD823085FE424FA7924 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +216,7 @@
 		5E1CA42B25C69482002C37FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					5E1CA43225C69482002C37FF = {
@@ -215,6 +239,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 5E1CA42A25C69482002C37FF;
 			productRefGroup = 5E1CA43425C69482002C37FF /* Products */;
@@ -234,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1CA43E25C69485002C37FF /* Preview Assets.xcassets in Resources */,
+				5E1CA47825C69796002C37FF /* Localizable.strings in Resources */,
 				5E1CA43B25C69485002C37FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1CA43925C69482002C37FF /* ContentView.swift in Sources */,
+				5E1CA46F25C6974A002C37FF /* EditView.swift in Sources */,
+				5E04A14025C6E64F00CEEFD0 /* DatabaseManager.swift in Sources */,
+				5E1CA46525C69528002C37FF /* Item.swift in Sources */,
 				5E1CA43725C69482002C37FF /* SwiftUITask02App.swift in Sources */,
+				5E1CA46A25C69595002C37FF /* ItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,11 +325,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		5E1CA47A25C69796002C37FF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E1CA47925C69796002C37FF /* en */,
+				5E1CA47E25C697A9002C37FF /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		5E1CA45625C69486002C37FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -361,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

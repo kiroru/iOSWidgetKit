@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  SwiftUITask02
+
+  Created by 高田 朋輝 on 2021/01/31.
+  
+*/
+
+"app_title" = "SwiftTask02";
+"title" = "Title";
+"explanation" = "Explanation";
+"cancel" = "Cancel";
+"ok" = "OK";
