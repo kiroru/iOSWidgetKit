@@ -17,21 +17,20 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView() {
-                LazyVStack(alignment: .leading) {
-                    ForEach(databaseManager.items, id:\.self) { item in
-                        NavigationLink(
-                            destination: EditView(
-                                id: item.id,
-                                title: item.title,
-                                explanation: item.explanation)
-                                .environmentObject(databaseManager),
-                            label: {
-                                ItemView(item: item)
-                            }
-                        )
-                    }
+            List {
+                ForEach(databaseManager.items, id:\.self) { item in
+                    NavigationLink(
+                        destination: EditView(
+                            id: item.id,
+                            title: item.title,
+                            explanation: item.explanation)
+                            .environmentObject(databaseManager),
+                        label: {
+                            ItemView(item: item)
+                        }
+                    )
                 }
+                .onDelete(perform: deleteRow)
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
@@ -48,6 +47,13 @@ struct ContentView: View {
                 }
             })
         }
+    }
+
+    func deleteRow(_ offsets: IndexSet) {
+        guard let selectedIndex = offsets.first else {
+            return
+        }
+        _ = databaseManager.delete(id: databaseManager.items[selectedIndex].id)
     }
 
 }

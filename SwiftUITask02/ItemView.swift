@@ -15,9 +15,7 @@ struct ItemView: View {
         VStack(alignment: .leading, spacing: 4) {
             Text(item.title)
             Text(item.explanation)
-            Divider()
         }
-        .padding(.leading, 6)
     }
 
 }
