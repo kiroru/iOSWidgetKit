@@ -13,6 +13,7 @@ class Item: Object, Identifiable {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var title: String = ""
     @objc dynamic var explanation: String = ""
+    @objc dynamic var createdAt: Date = Date()
 
 }
 

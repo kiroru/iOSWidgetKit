@@ -18,7 +18,7 @@ class DatabaseManager: ObservableObject {
 
     init() {
         self.realm = try! Realm()
-        itemResults = realm.objects(Item.self)
+        itemResults = realm.objects(Item.self).sorted(byKeyPath: "createdAt", ascending: false)
     }
     
     func create(title: String, explanation: String) {
