@@ -8,25 +8,28 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
+struct Provider: IntentTimelineProvider {
 
     func placeholder(in context: Context) -> MyWidgetEntry {
         let item = DatabaseManager().items.first
         return MyWidgetEntry(date: Date(),
-                             item: item ?? Item())
+                             item: item ?? Item(),
+                             configuration: ConfigurationIntent())
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (MyWidgetEntry) -> ()) {
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (MyWidgetEntry) -> ()) {
         let item = DatabaseManager().items.first
         let entry = MyWidgetEntry(date: Date(),
-                                  item: item ?? Item())
+                                  item: item ?? Item(),
+                                  configuration: configuration)
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<MyWidgetEntry>) -> ()) {
+    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<MyWidgetEntry>) -> ()) {
         let item = DatabaseManager().items.first
         let entry = MyWidgetEntry(date: Date(),
-                                  item: item ?? Item())
+                                  item: item ?? Item(),
+                                  configuration: configuration)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
     }
@@ -35,6 +38,7 @@ struct Provider: TimelineProvider {
 struct MyWidgetEntry: TimelineEntry {
     let date: Date
     let item: Item
+    let configuration: ConfigurationIntent
 }
 
 struct MyWidgetEntryView : View {
@@ -57,7 +61,7 @@ struct MyWidget: Widget {
     let kind: String = "MyWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             MyWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("My Widget")
@@ -68,7 +72,8 @@ struct MyWidget: Widget {
 struct MyWidget_Previews: PreviewProvider {
     static var previews: some View {
         MyWidgetEntryView(entry: MyWidgetEntry(date: Date(),
-                                               item: Item()))
+                                               item: Item(),
+                                               configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
