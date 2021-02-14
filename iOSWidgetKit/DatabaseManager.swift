@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import WidgetKit
 
 class DatabaseManager: ObservableObject {
 
@@ -17,20 +18,23 @@ class DatabaseManager: ObservableObject {
     }
 
     init() {
-        self.realm = try! Realm()
+        var config = Realm.Configuration()
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.jp.kiroru.iOSWidgetKit")
+        config.fileURL = url?.appendingPathComponent("db.realm")
+        self.realm = try! Realm(configuration: config)
         itemResults = realm.objects(Item.self).sorted(byKeyPath: "createdAt", ascending: false)
     }
     
     func create(title: String, explanation: String) {
         objectWillChange.send()
         do {
-            let realm = try Realm()
             let item = Item()
             item.title = title
             item.explanation = explanation
         
             try realm.write {
                 realm.add(item)
+                WidgetCenter.shared.reloadAllTimelines()
             }
         } catch {
             print("Error saving item \(error)")
@@ -46,6 +50,7 @@ class DatabaseManager: ObservableObject {
                 let item = realm.objects(Item.self).filter("id = %@", id).first
                 item?.title = title
                 item?.explanation = explanation
+                WidgetCenter.shared.reloadAllTimelines()
             }
         } catch {
             print("Error deleting category, \(error)")
@@ -60,6 +65,7 @@ class DatabaseManager: ObservableObject {
             try realm.write {
                 let item = realm.objects(Item.self).filter("id = %@", id)
                 realm.delete(item)
+                WidgetCenter.shared.reloadAllTimelines()
             }
         } catch {
             print("Error deleting category, \(error)")
