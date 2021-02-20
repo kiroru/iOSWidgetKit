@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5E04A14025C6E64F00CEEFD0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04A13F25C6E64F00CEEFD0 /* DatabaseManager.swift */; };
+		5E0A0AE125D93F520061D294 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0A0AE025D93F520061D294 /* Intents.framework */; };
+		5E0A0AE425D93F520061D294 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0A0AE325D93F520061D294 /* IntentHandler.swift */; };
+		5E0A0AE825D93F520061D294 /* MyWidgetIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5E0A0ADF25D93F520061D294 /* MyWidgetIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5E1CA43725C69482002C37FF /* SwiftUITask02App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CA43625C69482002C37FF /* SwiftUITask02App.swift */; };
 		5E1CA43925C69482002C37FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1CA43825C69482002C37FF /* ContentView.swift */; };
 		5E1CA43B25C69485002C37FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1CA43A25C69485002C37FF /* Assets.xcassets */; };
@@ -29,9 +32,17 @@
 		5E76246525D57BFB0027C803 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E76246425D57BFB0027C803 /* RealmSwift */; };
 		5E76246B25D57C1E0027C803 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5E76246A25D57C1E0027C803 /* Realm */; };
 		5E76246D25D57C1E0027C803 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E76246C25D57C1E0027C803 /* RealmSwift */; };
+		5E92C86A25E0BEDC000D849A /* MyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5E1DA5D025D5186A00AB0136 /* MyWidget.intentdefinition */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5E0A0AE625D93F520061D294 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E1CA42B25C69482002C37FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E0A0ADE25D93F520061D294;
+			remoteInfo = MyWidgetIntents;
+		};
 		5E1CA44525C69485002C37FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E1CA42B25C69482002C37FF /* Project object */;
@@ -62,6 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5E0A0AE825D93F520061D294 /* MyWidgetIntents.appex in Embed App Extensions */,
 				5E1DA5D825D5186D00AB0136 /* MyWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -71,6 +83,10 @@
 
 /* Begin PBXFileReference section */
 		5E04A13F25C6E64F00CEEFD0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		5E0A0ADF25D93F520061D294 /* MyWidgetIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyWidgetIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E0A0AE025D93F520061D294 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		5E0A0AE325D93F520061D294 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		5E0A0AE525D93F520061D294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1CA43325C69482002C37FF /* iOSWidgetKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWidgetKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1CA43625C69482002C37FF /* SwiftUITask02App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITask02App.swift; sourceTree = "<group>"; };
 		5E1CA43825C69482002C37FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +116,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E0A0ADC25D93F520061D294 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E0A0AE125D93F520061D294 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E1CA43025C69482002C37FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +159,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0A0AE225D93F520061D294 /* MyWidgetIntents */ = {
+			isa = PBXGroup;
+			children = (
+				5E0A0AE325D93F520061D294 /* IntentHandler.swift */,
+				5E0A0AE525D93F520061D294 /* Info.plist */,
+			);
+			path = MyWidgetIntents;
+			sourceTree = "<group>";
+		};
 		5E1CA42A25C69482002C37FF = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +176,7 @@
 				5E1CA44725C69485002C37FF /* iOSWidgetKitTests */,
 				5E1CA45225C69485002C37FF /* iOSWidgetKitUITests */,
 				5E1DA5CD25D5186A00AB0136 /* MyWidget */,
+				5E0A0AE225D93F520061D294 /* MyWidgetIntents */,
 				5E1CA43425C69482002C37FF /* Products */,
 				842408EC0F318EF9B768B102 /* Frameworks */,
 			);
@@ -155,6 +189,7 @@
 				5E1CA44425C69485002C37FF /* iOSWidgetKitTests.xctest */,
 				5E1CA44F25C69485002C37FF /* iOSWidgetKitUITests.xctest */,
 				5E1DA5C825D5186A00AB0136 /* MyWidgetExtension.appex */,
+				5E0A0ADF25D93F520061D294 /* MyWidgetIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,6 +254,7 @@
 			children = (
 				5E1DA5C925D5186A00AB0136 /* WidgetKit.framework */,
 				5E1DA5CB25D5186A00AB0136 /* SwiftUI.framework */,
+				5E0A0AE025D93F520061D294 /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,6 +262,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E0A0ADE25D93F520061D294 /* MyWidgetIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E0A0AEB25D93F520061D294 /* Build configuration list for PBXNativeTarget "MyWidgetIntents" */;
+			buildPhases = (
+				5E0A0ADB25D93F520061D294 /* Sources */,
+				5E0A0ADC25D93F520061D294 /* Frameworks */,
+				5E0A0ADD25D93F520061D294 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyWidgetIntents;
+			productName = MyWidgetIntents;
+			productReference = 5E0A0ADF25D93F520061D294 /* MyWidgetIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5E1CA43225C69482002C37FF /* iOSWidgetKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E1CA45825C69486002C37FF /* Build configuration list for PBXNativeTarget "iOSWidgetKit" */;
@@ -239,6 +292,7 @@
 			);
 			dependencies = (
 				5E1DA5D725D5186D00AB0136 /* PBXTargetDependency */,
+				5E0A0AE725D93F520061D294 /* PBXTargetDependency */,
 			);
 			name = iOSWidgetKit;
 			packageProductDependencies = (
@@ -315,6 +369,9 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					5E0A0ADE25D93F520061D294 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					5E1CA43225C69482002C37FF = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -352,11 +409,19 @@
 				5E1CA44325C69485002C37FF /* iOSWidgetKitTests */,
 				5E1CA44E25C69485002C37FF /* iOSWidgetKitUITests */,
 				5E1DA5C725D5186A00AB0136 /* MyWidgetExtension */,
+				5E0A0ADE25D93F520061D294 /* MyWidgetIntents */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E0A0ADD25D93F520061D294 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E1CA43125C69482002C37FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,6 +457,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E0A0ADB25D93F520061D294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E92C86A25E0BEDC000D849A /* MyWidget.intentdefinition in Sources */,
+				5E0A0AE425D93F520061D294 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E1CA42F25C69482002C37FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -436,6 +510,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5E0A0AE725D93F520061D294 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E0A0ADE25D93F520061D294 /* MyWidgetIntents */;
+			targetProxy = 5E0A0AE625D93F520061D294 /* PBXContainerItemProxy */;
+		};
 		5E1CA44625C69485002C37FF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5E1CA43225C69482002C37FF /* iOSWidgetKit */;
@@ -466,6 +545,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5E0A0AE925D93F520061D294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y48P6SY25X;
+				INFOPLIST_FILE = MyWidgetIntents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.kiroru.iOSWidgetKit.MyWidgetIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5E0A0AEA25D93F520061D294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y48P6SY25X;
+				INFOPLIST_FILE = MyWidgetIntents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.kiroru.iOSWidgetKit.MyWidgetIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5E1CA45625C69486002C37FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -761,6 +880,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E0A0AEB25D93F520061D294 /* Build configuration list for PBXNativeTarget "MyWidgetIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E0A0AE925D93F520061D294 /* Debug */,
+				5E0A0AEA25D93F520061D294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5E1CA42E25C69482002C37FF /* Build configuration list for PBXProject "iOSWidgetKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

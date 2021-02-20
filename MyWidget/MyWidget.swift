@@ -46,7 +46,16 @@ struct MyWidgetEntryView : View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Color.yellow
+            switch entry.configuration.backgroundColor {
+            case "赤":
+                Color.red
+            case "青":
+                Color.blue
+            case "黄":
+                Color.yellow
+            default:
+                Color.white
+            }
             VStack(alignment: .leading, spacing: 6) {
                 Text(entry.item.title)
                 Text(entry.item.explanation)
@@ -64,8 +73,8 @@ struct MyWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             MyWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("メモ")
+        .description("最新のメモを表示します。")
     }
 }
 
