@@ -6,7 +6,7 @@
   
 */
 
-"app_title" = "SwiftTask02";
+"app_title" = "iOS WidgetKit";
 "title" = "タイトル";
 "explanation" = "説明";
 "cancel" = "キャンセル";
